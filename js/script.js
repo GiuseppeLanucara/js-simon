@@ -20,6 +20,31 @@ setTimeout(function(){
 	numeriCasualiElm.innerHTML = '';
 }, (timer - 1) * 1000 );
 
+setTimeout(function(){
+	// 3. chiedo all'utente per 5 volte di inserire un numero
+	const numeriUtente = [];
+
+	for(let i = 0; i < 5; i++) {
+		const num = parseInt(prompt("Inserisci un numero"));
+		numeriUtente.push(num);
+	}
+	
+	// 4. confronto dei due array e verifico se ce il numero e stampo il risultato
+	const numeriValidi = [];
+	for(let i = 0; i < numeriUtente.length; i++) {
+		
+		if(numeriCasuali.includes(numeriUtente[i]) == true) {
+			numeriValidi.push(numeriUtente[i]);
+		}
+	}
+
+	if(numeriValidi.length == 0) {
+		alert("Non hai memoria!! ritenta");
+	} else {
+		alert(`Hai indovinato ${numeriValidi.length}, i numeri indovinati sono: ${numeriValidi}`);
+	}
+
+}, timer * 1000);
 
 
 
